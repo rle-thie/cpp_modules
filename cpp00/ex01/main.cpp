@@ -9,26 +9,30 @@ int	main(void)
 	// book.test_fill_all();
 	while (run == true)
 	{
-		book.get_all_contact();
-		std::cout << "choix: ";
+		std::cout << "Phonebook: ";
 		std::getline(std::cin, line);
-		if (line == "add")
+		if (line == "ADD")
 		{
-			std::cout << "add" << std::endl;
 			book.add_contact();
 		}
-		else if (line == "search")
+		else if (line == "SEARCH")
 		{
-			std::cout << "search" << std::endl;
+			char	*s;
+
 			book.get_all_contact();
+			std::cout << "enter contact number: " << std::endl;
+			std::getline(std::cin, line);
+			s = &line[0];
+			// std::cout << s << std::endl;
+			book.print_contact(s);
 		}
-		else if (line == "exit")
+		else if (line == "EXIT")
 		{
-			std::cout << "FIN DU BUZZ" << std::endl;
+			// std::cout << "FIN DU BUZZ" << std::endl;
 			run = false;
 		}
 		else
-			std::cout << "non" << std::endl;
+			std::cout << "Phonebook: command not found" << std::endl;
 	}
 	return (0);
 }

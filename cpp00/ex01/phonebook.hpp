@@ -2,6 +2,9 @@
 	#define __PHONEBOOK__
 
 	#include <iostream>
+	// #include <string>
+	// #include <sstream>
+	// #include <limits>
 
 	#include <stdio.h>
 	#include <stdlib.h>
@@ -19,11 +22,15 @@
 			~Contact();
 
 		// set
-		void setcontact();
-		void setfirstname(std::string str);
+		void	setcontact();
+		void	setfirstname(std::string str);
 
 		// get
-		std::string getfirstname();
+		std::string	getfirstname();
+		std::string	getlastname();
+		std::string	getnickname();
+		std::string	getsecret();
+		std::string	getphonenumber();
 	};
 
 	class Phonebook
@@ -35,11 +42,13 @@
 			Phonebook();
 			~Phonebook();
 		
-		void add_contact();
-		void get_all_contact();
+		void		add_contact();
+		void		get_all_contact();
+		void		print_contact(char *str);
+		std::string	tronque(std::string str);
 		
 		// test
-		void test_fill_all();
+		void	test_fill_all();
 		// void Phonebook::get_contact(int n);
 	};
 

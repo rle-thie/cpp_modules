@@ -24,32 +24,62 @@ void Contact::setcontact()
 	std::cout << "first name: " << std::endl;
 	std::getline(std::cin, line);
 	this->first_name = line;
+	if (line.length() == 0)
+		this->first_name = "NULL      ";
 
-	// std::cout << "last name: " << std::endl;
-	// std::getline(std::cin, line);
-	// this->last_name = line;
+	std::cout << "last name: " << std::endl;
+	std::getline(std::cin, line);
+	this->last_name = line;
+	if (line.length() == 0)
+		this->last_name = "NULL      ";
 
-	// std::cout << "nickname: " << std::endl;
-	// std::getline(std::cin, line);
-	// this->nickname = line;
+	std::cout << "nickname: " << std::endl;
+	std::getline(std::cin, line);
+	this->nickname = line;
+	if (line.length() == 0)
+		this->nickname = "NULL      ";
 
-	// std::cout << "phone_number: " << std::endl;
-	// std::getline(std::cin, line);
-	// this->phone_number = line;
+	std::cout << "phone_number: " << std::endl;
+	std::getline(std::cin, line);
+	this->phone_number = line;
+	if (line.length() == 0)
+		this->phone_number = "NULL      ";
 
-	// std::cout << "secret: " << std::endl;
-	// std::getline(std::cin, line);
-	// this->secret = line;
+	std::cout << "secret: " << std::endl;
+	std::getline(std::cin, line);
+	this->secret = line;
+	if (line.length() == 0)
+		this->secret = "NULL      ";
 }
 
+// setter
 void Contact::setfirstname(std::string str)
 {
 	this->first_name = str;
-	// std::cout << "first_name: " << this->first_name << std::endl;
 }
 
+// getter
 std::string	Contact::getfirstname()
 {
-	// std::cout << "first name: " << this->first_name << std::endl;
 	return (this->first_name);
+}
+
+std::string	Contact::getlastname()
+{
+	return (this->last_name);
+}
+
+std::string	Contact::getnickname()
+{
+	return (this->nickname);
+}
+
+std::string	Contact::getphonenumber()
+{
+	return (this->phone_number);
+}
+
+std::string	Contact::getsecret()
+{
+	return (this->secret);
 }
