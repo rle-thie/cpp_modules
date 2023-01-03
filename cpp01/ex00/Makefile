@@ -7,7 +7,7 @@ CC = c++
 # CFLAGS = -Wall -Wextra -Werror
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = phonebook
+NAME = Zombie
 
 %.o:		%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -27,6 +27,6 @@ re : fclean all
 
 ree : re
 	clear
-	./phonebook
+	./Zombie
 
 .PHONY: all fclean clean re
