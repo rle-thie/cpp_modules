@@ -2,12 +2,12 @@
 
 int main()
 {
-	Zombie	zombie1;
-	Zombie	*zombie2;
-	zombie2 = zombie1.newZombie("test");
+	Zombie	*zombie1;
 
-	zombie1=zombie1;
-	zombie2=zombie2;
-	zombie2->~Zombie();
+	zombie1 = newZombie("zombie1");
+	zombie1->announce();
+
+	randomChump("randomZombie");
+	zombie1->~Zombie();
 	return (0);
 }
