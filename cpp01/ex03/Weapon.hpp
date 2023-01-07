@@ -9,11 +9,12 @@
 			std::string type;
 
 		public :
-			Weapon();
+			Weapon(std::string name);
+			// Weapon();
 			~Weapon();
 
-			const std::string	GetType();
-			void		SetType(std::string str);
+			const std::string			&GetType();
+			void				setType(std::string new_name);
 	};
 
 #endif

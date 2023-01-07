@@ -1,4 +1,4 @@
-SRCS = main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -7,7 +7,7 @@ CC = c++
 # CFLAGS = -Wall -Wextra -Werror
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = weapon
+NAME = sed
 
 %.o:		%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
