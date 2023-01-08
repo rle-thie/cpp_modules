@@ -13,7 +13,7 @@ int main(int ac, char **av)
 	
 	Harl	h;
 	std::string	str = av[1];
-	int	c;
+	int	c = 5;
 	std::string	tab[4] =
 	{
 		"DEBUG",
