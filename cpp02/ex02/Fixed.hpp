@@ -8,7 +8,7 @@
 class Fixed
 {
 	private :
-		float	raw_nb;
+		int					raw_nb;
 		static const int	bit = 8;
 
 	public :
@@ -18,11 +18,35 @@ class Fixed
 		Fixed(Fixed const & src);
 		~Fixed();
 		Fixed & operator=(Fixed const &n);
+		
+		// comparaison
+		bool	operator>(Fixed const &n) const;
+		bool	operator<(Fixed const &n) const;
+		bool	operator>=(Fixed const &n) const;
+		bool	operator<=(Fixed const &n) const;
+		bool	operator==(Fixed const &n) const;
+		bool	operator!=(Fixed const &n) const;
+		// operation
+		Fixed	operator+(Fixed const &n) const;
+		Fixed	operator-(Fixed const &n) const;
+		Fixed	operator*(Fixed const &n) const;
+		Fixed	operator/(Fixed const &n) const;
+		// incrementation
+		Fixed	&operator++(void);
+		Fixed	&operator--(void);
+		Fixed	operator++(int);
+		Fixed	operator--(int);
 
-		int	getRawBits(void) const;
-		void setRawBits(int const raw);
-		int	toInt(void) const;
-		float toFloat(void) const;
+		// getters & setters
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
+		// methodes
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static Fixed const	&max(Fixed const &a, Fixed const &b);
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static Fixed const	&min(Fixed const &a, Fixed const &b);
+		int					toInt(void) const;
+		float				toFloat(void) const;
 
 };
 
