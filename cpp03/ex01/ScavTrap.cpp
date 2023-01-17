@@ -1,8 +1,8 @@
 #include "ScavTrap.hpp"
 
-void	guarGate(void)
+void	ScavTrap::guarGate(void)
 {
-	
+	std::cout << "ScavTrap est entré en mode Gate keeper." << std::endl;
 }
 
 ScavTrap::ScavTrap() : ClapTrap()
