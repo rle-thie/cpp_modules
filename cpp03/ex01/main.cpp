@@ -5,6 +5,6 @@ int main(void)
 {
 	ScavTrap j("j1");
 
-	j.guarGate();
+	j.guardGate();
 	j.beRepaired(1);
 }

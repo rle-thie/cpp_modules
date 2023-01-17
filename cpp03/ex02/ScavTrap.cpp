@@ -31,5 +31,5 @@ ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "ScavTrap Destructor called" << std::endl;
+	std::cout << "ScavTrap Destructor called : " << this->getName() << std::endl;
 }
