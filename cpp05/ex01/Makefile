@@ -1,4 +1,4 @@
-SRCS = main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS = main.cpp Bureaucrate.cpp Form.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -7,7 +7,7 @@ CC = c++
 # CFLAGS = -Wall -Wextra -Werror
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = animal
+NAME = Bureaucrate
 
 %.o:		%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
