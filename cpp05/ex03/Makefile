@@ -1,0 +1,37 @@
+SRCS = main.cpp Bureaucrate.cpp Form.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
+
+OBJS = $(SRCS:.cpp=.o)
+
+CC = c++
+
+# CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
+NAME = Bureaucrate
+
+%.o:		%.cpp
+	$(CC) $(CFLAGS) -c $< -o $@
+
+all:		$(NAME)
+
+$(NAME):	$(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+
+clean:
+	rm -f $(OBJS)
+	rm -f *_shrubbery
+
+fclean: clean
+	rm -f $(NAME)
+
+re : fclean all
+
+ree : re
+	clear
+	./$(NAME)
+
+v : re
+	clear
+	valgrind ./$(NAME)
+
+.PHONY: all fclean clean re
