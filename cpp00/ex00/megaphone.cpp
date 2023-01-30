@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 		while (av[i])
 		{
 			std::cout << av[i];
-			std::cout << " ";
+			// std::cout << " ";
 			i++;
 		}
 		std::cout << std::endl;

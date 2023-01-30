@@ -23,12 +23,10 @@ int	main(void)
 			std::cout << "enter contact number: " << std::endl;
 			std::getline(std::cin, line);
 			s = &line[0];
-			// std::cout << s << std::endl;
 			book.print_contact(s);
 		}
-		else if (line == "EXIT")
+		else if (line == "EXIT" || line == "\0")
 		{
-			// std::cout << "FIN DU BUZZ" << std::endl;
 			run = false;
 		}
 		else
