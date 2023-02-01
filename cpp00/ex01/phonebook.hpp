@@ -38,6 +38,7 @@
 		private:
 			Contact book[8];
 			int	len;
+			int lenplus;
 		public:
 			Phonebook();
 			~Phonebook();

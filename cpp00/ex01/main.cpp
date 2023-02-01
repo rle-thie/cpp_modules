@@ -25,7 +25,7 @@ int	main(void)
 			s = &line[0];
 			book.print_contact(s);
 		}
-		else if (line == "EXIT" || line == "\0")
+		else if (line == "EXIT")
 		{
 			run = false;
 		}

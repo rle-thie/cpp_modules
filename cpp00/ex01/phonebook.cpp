@@ -5,6 +5,7 @@ Phonebook::Phonebook()
 {
 	std::cout << "creation: phonebook" << std::endl;
 	this->len = 0;
+	this->lenplus = 0;
 }
 
 Phonebook::~Phonebook()
@@ -33,11 +34,14 @@ void Phonebook::add_contact()
 {
 	if (len == 8)
 	{
-		for (int i = 6; i >= 0; i--)
-		{
-			book[i+1] = book[i];
-		}
-		book[0].setcontact();
+		if (lenplus == 7)
+			lenplus = 0;
+		// for (int i = 1; i >= 6; i++)
+		// {
+		// 	book[i] = book[i+1];
+		// }
+		book[lenplus].setcontact();
+		lenplus++;
 	}
 	else
 	{
