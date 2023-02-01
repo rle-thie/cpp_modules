@@ -8,7 +8,6 @@ int main()
 	zombie1->announce();
 
 	randomChump("randomZombie");
-	// zombie1->~Zombie();
 	delete zombie1;
 	return (0);
 }
