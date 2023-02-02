@@ -7,7 +7,7 @@ CC = c++
 # CFLAGS = -Wall -Wextra -Werror
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-NAME = canon
+NAME = Clap
 
 %.o:		%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@

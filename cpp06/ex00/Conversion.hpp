@@ -12,7 +12,6 @@ class	Convert
 	private :
 		int		_ac;
 		char	**_av;
-		double	_d;
 	
 	public :
 		Convert();
