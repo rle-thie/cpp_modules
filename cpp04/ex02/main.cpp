@@ -60,7 +60,7 @@ int	main(void)
 
 
 
-
+	// AAnimal an = new AAnimal();
 
 
 	// const Animal* j = new Dog();
