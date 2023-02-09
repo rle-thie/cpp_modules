@@ -115,8 +115,7 @@ void	Convert::convertChar(std::string str, double d)
 	else
 	{
 		if (d >= 32 && d <= 126)
-			std::cout << "Char : '*'" << std::endl;
-			// std::cout << "Char : '" << static_cast<char>(d) << "'" << std::endl;
+			std::cout << "Char : '" << static_cast<char>(d) << "'" << std::endl;
 		else
 			std::cout << "Char : non displayable" << std::endl;
 	}
