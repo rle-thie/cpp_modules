@@ -27,6 +27,12 @@ Span &				Span::operator=( Span const & rhs )
 	return *this;
 }
 
+//  --------------------------------- getter ---------------------------------
+
+unsigned int Span::getSize() const
+{
+	return _size;
+}
 
 //  --------------------------------- METHODS ----------------------------------
 
@@ -81,9 +87,3 @@ void	Span::displayTab()
 }
 
 
-//  --------------------------------- getter ---------------------------------
-
-unsigned int Span::getSize() const
-{
-	return _size;
-}
