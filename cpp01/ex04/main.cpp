@@ -23,7 +23,8 @@ int main(int ac, char **av)
 	std::ifstream input_file(av[1]);
 	if (!input_file)
 		return (ft_error("error, can't open file"));
-
+	if (to_find == "")
+		return (ft_error("error fatal"));
 	std::ofstream	output_file(output_name.c_str());
 
 	while(std::getline(input_file, buff))

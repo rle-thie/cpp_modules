@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <stdexcept>
+#include <cstdlib>
 
 template<typename T>
 class Array

@@ -12,11 +12,11 @@ void	function_print(T x)
 }
 
 template<typename T>
-void	iter(T *tab, int lenth, void (*function_name)(T &))
+void	iter(T *tab, size_t lenth, void (*function_name)(T const &arg))
 {
-	for (int i = 0; i < lenth; i++)
+	for (size_t i = 0; i < lenth; i++)
 	{
-		function_name(tab[i]);
+		(*function_name)(tab[i]);
 	}
 }
 
