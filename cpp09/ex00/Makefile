@@ -27,7 +27,7 @@ re : fclean all
 
 ree : re
 	clear
-	./$(NAME)
+	./$(NAME) input.txt
 
 v : re
 	clear
