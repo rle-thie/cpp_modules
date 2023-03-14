@@ -35,7 +35,7 @@ BitcoinExchange::BitcoinExchange(char *inputFile)
 		{
 			_parse_line(buff);
 			// std::cout << buff << std::endl;
-			_comp_data();
+			_cmp_data();
 		}
 		catch(const std::exception& e)
 		{
@@ -51,7 +51,11 @@ BitcoinExchange::~BitcoinExchange()
 
 void	BitcoinExchange::_cmp_data(void)
 {
-	
+	for (std::map<std::string, std::string>::iterator it = _bitcoin_nbr.begin(); it!=_bitcoin_nbr.end(); ++it)
+	{
+		std::cout << it->first << " => " << it->second << '\n';
+	}
+	std::cout << 
 }
 
 void	BitcoinExchange::_fillcsv(std::string line)
@@ -75,7 +79,7 @@ void	BitcoinExchange::_fillcsv(std::string line)
 		token = line2.substr(0, pos);
 		line2.erase(0, pos + delimiter.length());
 	}
-	_bitcoin_nbr.insert(std::pair<std::string, std::string>(token, line2));
+	_bitcoin_price.insert(std::pair<std::string, std::string>(token, line2));
 }
 
 void	BitcoinExchange::_parse_line(std::string line)
