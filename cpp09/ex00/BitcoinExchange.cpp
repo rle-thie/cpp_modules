@@ -33,9 +33,10 @@ BitcoinExchange::BitcoinExchange(char *inputFile)
 		// parsing
 		try
 		{
-			_parse_line(buff);
+			std::pair<std::string, std::string> datee;
+			datee = _parse_line(buff);
 			// std::cout << buff << std::endl;
-			_cmp_data();
+			_cmp_data(datee);
 		}
 		catch(const std::exception& e)
 		{
@@ -49,13 +50,22 @@ BitcoinExchange::~BitcoinExchange()
 {
 }
 
-void	BitcoinExchange::_cmp_data(void)
+void	BitcoinExchange::_cmp_data(std::pair<std::string, std::string> date)
 {
-	for (std::map<std::string, std::string>::iterator it = _bitcoin_nbr.begin(); it!=_bitcoin_nbr.end(); ++it)
+	for (std::map<std::string, std::string>::iterator it = _bitcoin_price.begin(); it != _bitcoin_price.end(); ++it)
 	{
-		std::cout << it->first << " => " << it->second << '\n';
+		if (date.first == it->first)
+		{
+			std::cout << date.first << " => " << date.second << " = ";
+			char *convertme1 = &date.second[0];
+			char *convertme2 = &it->second[0];
+			double converted1=atof(convertme1);
+			double converted2=atof(convertme2);
+			std::cout << converted1*converted2 << std::endl;
+			return;
+		}
 	}
-	std::cout << 
+	throw std::length_error("Error: can't find date in database");
 }
 
 void	BitcoinExchange::_fillcsv(std::string line)
@@ -82,7 +92,7 @@ void	BitcoinExchange::_fillcsv(std::string line)
 	_bitcoin_price.insert(std::pair<std::string, std::string>(token, line2));
 }
 
-void	BitcoinExchange::_parse_line(std::string line)
+std::pair<std::string, std::string>	BitcoinExchange::_parse_line(std::string line)
 {
 	// if (line.size() <= 13)
 	// 	throw std::length_error("error !");
@@ -132,6 +142,7 @@ void	BitcoinExchange::_parse_line(std::string line)
 	// _parse_nbr(token);
 
 	_bitcoin_nbr.insert(std::pair<std::string, std::string>(token, line2));
+	return (std::pair<std::string, std::string>(token, line2));
 }
 
 // void	BitcoinExchange::_parse_line(std::string line)

@@ -19,9 +19,9 @@ class BitcoinExchange
 		~BitcoinExchange();
 
 	private :
-		void	_parse_line(std::string line);
-		void	_fillcsv(std::string line);
-		void	_cmp_data(void);
+		std::pair<std::string, std::string>	_parse_line(std::string line);
+		void								_fillcsv(std::string line);
+		void								_cmp_data(std::pair<std::string, std::string> date);
 		// void	_parse_date(std::string date);
 		// void	_parse_nbr(std::string nbr);
 	
