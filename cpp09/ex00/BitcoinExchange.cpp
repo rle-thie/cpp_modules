@@ -100,7 +100,7 @@ void	BitcoinExchange::_fillcsv(std::string line)
 	_bitcoin_price.insert(std::pair<std::string, std::string>(token, line2));
 }
 
-void	pyear(std::string year)
+void	BitcoinExchange::_pyear(std::string year)
 {
 	if (year.size() != 4)
 		throw std::length_error("year error !");
@@ -110,9 +110,10 @@ void	pyear(std::string year)
 		throw std::length_error("year error !");
 	else if (y > 2022)
 		throw std::length_error("year error !");
+	_y = y;
 }
 
-void	pmonth(std::string month)
+void	BitcoinExchange::_pmonth(std::string month)
 {
 	if (month.size() != 2)
 		throw std::length_error("month error !");
@@ -122,9 +123,10 @@ void	pmonth(std::string month)
 		throw std::length_error("month error !");
 	else if (y > 12)
 		throw std::length_error("month error !");
+	_m = y;
 }
 
-void	pday(std::string day)
+void	BitcoinExchange::_pday(std::string day)
 {
 	if (day.size() != 2)
 		throw std::length_error("day error !");
@@ -134,9 +136,16 @@ void	pday(std::string day)
 		throw std::length_error("day error !");
 	else if (y > 31)
 		throw std::length_error("day error !");
+	if (_y >= 2022)
+	{
+		if (_m == 3 && y >= 30)
+			throw std::length_error("date error !");
+		else if (_m > 3)
+			throw std::length_error("date error !");
+	}
 }
 
-void	check_date(std::string full_date)
+void	BitcoinExchange::_check_date(std::string full_date)
 {
 	int c = 0;
 	int i = 0;
@@ -156,13 +165,13 @@ void	check_date(std::string full_date)
 	while ((pos = date.find(delimiter)) != std::string::npos) {
 		token = date.substr(0, pos);
 		if (i == 0)
-			pyear(token);
+			_pyear(token);
 		else if (i == 1)
-			pmonth(token);
+			_pmonth(token);
 		date.erase(0, pos + delimiter.length());
 		i++;
 	}
-	pday(date);
+	_pday(date);
 	
 }
 
@@ -193,7 +202,7 @@ std::pair<std::string, std::string>	BitcoinExchange::_parse_line(std::string lin
 		token = line2.substr(0, pos);
 		line2.erase(0, pos + delimiter.length());
 	}
-	check_date(token);
+	_check_date(token);
 	std::string	snbr = line2;
 	
 	if (snbr.size() > 7)
