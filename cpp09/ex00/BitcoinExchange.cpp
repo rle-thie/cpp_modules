@@ -40,10 +40,11 @@ BitcoinExchange::BitcoinExchange(char *inputFile)
 		}
 		catch(const std::exception& e)
 		{
-			std::cerr << e.what() << '\n';
+			std::cout << e.what() << std::endl;
 		}
-		
 	}
+	input_file.close();
+	input_data.close();
 }
 
 BitcoinExchange::~BitcoinExchange()

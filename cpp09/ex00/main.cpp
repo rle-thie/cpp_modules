@@ -10,7 +10,7 @@ int main(int ac, char **av)
 	}
 	catch(const std::exception& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cout << e.what() << std::endl;;
 	}
 	return 0;
 }
