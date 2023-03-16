@@ -15,8 +15,11 @@ class BitcoinExchange
 		std::map<std::string, std::string>	_bitcoin_price;
 
 	public :
+		BitcoinExchange();
 		BitcoinExchange(char *inputFile);
 		~BitcoinExchange();
+		BitcoinExchange(BitcoinExchange const &src);
+		BitcoinExchange &operator=(BitcoinExchange const &a);
 
 	private :
 		std::pair<std::string, std::string>	_parse_line(std::string line);

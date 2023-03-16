@@ -225,6 +225,28 @@ std::pair<std::string, std::string>	BitcoinExchange::_parse_line(std::string lin
 	return (std::pair<std::string, std::string>(token, line2));
 }
 
+// --------------------------
+
+BitcoinExchange::BitcoinExchange()
+{
+}
+
+BitcoinExchange::BitcoinExchange(BitcoinExchange const &src)
+{
+	*this = src;
+}
+
+BitcoinExchange	&BitcoinExchange::operator=(BitcoinExchange const &a)
+{
+	// if same
+	if (&a == this)
+		return (*this);
+	else
+	{
+	}
+	return (*this);
+}
+
 // void	BitcoinExchange::_parse_line(std::string line)
 // {
 // 	if (line.size() <= 13)
