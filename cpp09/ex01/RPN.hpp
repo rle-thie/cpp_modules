@@ -11,7 +11,7 @@
 class Rpn
 {
 	private :
-		std::stack<int>	pile;
+		std::stack<int>	_pile;
 
 	public :
 		Rpn();
@@ -21,7 +21,9 @@ class Rpn
 		~Rpn();
 
 	private :
-		// void	_add_stack();
+		void	_ope(char opera);
+		void	_is_correct(std::string token);
+		void	_print_step(char token);
 		
 	
 };

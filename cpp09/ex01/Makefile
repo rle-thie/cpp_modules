@@ -1,4 +1,4 @@
-SRCS = main.cpp BitcoinExchange.cpp
+SRCS = main.cpp RPN.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -27,10 +27,10 @@ re : fclean all
 
 ree : re
 	clear
-	./$(NAME) input.txt
+	./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
 
 v : re
 	clear
-	valgrind ./$(NAME)
+	valgrind ./$(NAME) "8 9 * 9 - 9 - 9 - 4 - 1 +"
 
 .PHONY: all fclean clean re
