@@ -92,7 +92,7 @@ Rpn::~Rpn()
 {
 }
 
-Rpn::Rpn(Rpn const &src)
+Rpn::Rpn(Rpn const &src) : _pile(src._pile)
 {
 	*this = src;
 }
@@ -101,9 +101,8 @@ Rpn	&Rpn::operator=(Rpn const &a)
 {
 	// if same
 	if (&a == this)
-		return (*this);
-	else
 	{
+		_pile = a._pile;
 	}
 	return (*this);
 }
