@@ -15,7 +15,6 @@ class BitcoinExchange
 		std::map<std::string, std::string>	_bitcoin_price;
 		int			_y;
 		int			_m;
-		int			_d;
 
 	public :
 		BitcoinExchange();

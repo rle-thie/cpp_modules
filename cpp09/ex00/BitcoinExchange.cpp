@@ -241,7 +241,7 @@ BitcoinExchange::BitcoinExchange()
 {
 }
 
-BitcoinExchange::BitcoinExchange(BitcoinExchange const &src)
+BitcoinExchange::BitcoinExchange(BitcoinExchange const &src) : _bitcoin_nbr(src._bitcoin_nbr), _bitcoin_price(src._bitcoin_price), _y(src._y), _m(src._m)
 {
 	*this = src;
 }
@@ -249,10 +249,12 @@ BitcoinExchange::BitcoinExchange(BitcoinExchange const &src)
 BitcoinExchange	&BitcoinExchange::operator=(BitcoinExchange const &a)
 {
 	// if same
-	if (&a == this)
-		return (*this);
-	else
+	if (this != &a)
 	{
+		_bitcoin_nbr = a._bitcoin_nbr;
+		_bitcoin_price = a._bitcoin_price;
+		_y = a._y;
+		_m = a._m;
 	}
 	return (*this);
 }
