@@ -143,6 +143,17 @@ void	BitcoinExchange::_pday(std::string day)
 		else if (_m > 3)
 			throw std::length_error("date error !");
 	}
+	if (y >= 31)
+	{
+		if (_m == 4)
+			throw std::length_error("date error !");
+		if (_m == 6)
+			throw std::length_error("date error !");
+		if (_m == 9)
+			throw std::length_error("date error !");
+		if (_m == 11)
+			throw std::length_error("date error !");
+	}
 }
 
 void	BitcoinExchange::_check_date(std::string full_date)
