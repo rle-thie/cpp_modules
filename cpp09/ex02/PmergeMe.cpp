@@ -1,6 +1,8 @@
 #include <vector>
 #include <deque>
 
+// https://tomicriedel.medium.com/mergesort-in-dart-sorting-algorithms-c62bde377533
+
 void insertion_sort(std::vector<int> &vec, int begin, int end)
 {
 	int j, key;
