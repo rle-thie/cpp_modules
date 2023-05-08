@@ -21,6 +21,10 @@ BitcoinExchange::BitcoinExchange(char *inputFile)
 		_fillcsv(buf);
 	}
 
+	// si csv vide ou juste la premiere ligne.
+	if (c <= 1)
+		throw std::length_error("csv file error !");
+
 	std::string buff;
 	c = 0;
 	while(std::getline(input_file, buff))
