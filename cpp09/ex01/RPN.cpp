@@ -63,7 +63,12 @@ void	Rpn::_ope(char opera)
 	else if (opera == '*')
 		_pile.push(first * second);
 	else if (opera == '/')
+	{
+		// si on essaye de diviser par zero = impossible.
+		if (second == 0)
+			throw std::out_of_range("Error: bad input ('0 /')");
 		_pile.push(first / second);
+	}
 }
 
 void	Rpn::_print_step(char token)
